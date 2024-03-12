@@ -42,7 +42,7 @@ const Navbar = ({ setData,cart}) => {
 
   return (
     <div>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-4">
         <div>
           <Link to="/">Products</Link>
         </div>
@@ -62,6 +62,7 @@ const Navbar = ({ setData,cart}) => {
             </button>
           </Link>
         </div>
+        <Link to="/login">Login</Link>
       </div>
       <div className="grid grid-cols-9 mt-16">
         <button onClick={resetFilter}>No filter</button>

@@ -69,9 +69,9 @@ const Navbar = ({ setData, cart }) => {
           <button className="btn btn-outline w-28 text-lg">Login</button>
         </Link>
       </div>
-      <div className="grid grid-cols-9 mt-16">
+      <div className="grid grid-cols-8 gap-2 m-16">
         <button className="btn btn-outline btn-success" onClick={resetFilter}>No filter</button>
-        <button className="btn btn-outline btn-success">Filter-By:</button>
+        
         <button className="btn btn-outline btn-success" onClick={() => filterByCategory("smartphones")}>
           smartphones
         </button>

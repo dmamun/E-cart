@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import Products from "./Products";
 import { items } from "./Data";
 import Cart from "./Cart";
-import { FaBeer } from 'react-icons/fa'
+import { FaBeer } from "react-icons/fa";
 import { FaCartArrowDown } from "react-icons/fa";
 
-const Navbar = ({ setData,cart}) => {
+const Navbar = ({ setData, cart }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filterByCategory = (parameter) => {
@@ -44,15 +44,18 @@ const Navbar = ({ setData,cart}) => {
     <div>
       <div className="grid grid-cols-4">
         <div>
-          <Link to="/">Products</Link>
+          <Link to="/">
+            <p className="btn btn-ghost text-xl">Products</p>
+          </Link>
         </div>
         <div>
           <input
             type="text"
-            placeholder="search"
             value={searchTerm}
             onChange={handleSearch}
-          ></input>
+            placeholder="Search Products"
+            className="input input-bordered w-40 md:w-auto"
+          />
         </div>
         <div>
           <Link to="/cart">
@@ -62,23 +65,30 @@ const Navbar = ({ setData,cart}) => {
             </button>
           </Link>
         </div>
-        <Link to="/login">Login</Link>
+        <Link to="/login">
+          <button className="btn btn-outline w-28 text-lg">Login</button>
+        </Link>
       </div>
       <div className="grid grid-cols-9 mt-16">
-        <button onClick={resetFilter}>No filter</button>
-        <button>Filter-By:</button>
-        <button onClick={() => filterByCategory("smartphones")}>
+        <button className="btn btn-outline btn-success" onClick={resetFilter}>No filter</button>
+        <button className="btn btn-outline btn-success">Filter-By:</button>
+        <button className="btn btn-outline btn-success" onClick={() => filterByCategory("smartphones")}>
           smartphones
         </button>
-        <button onClick={() => filterByCategory("laptops")}>laptops</button>
-        <button onClick={() => filterByCategory("fragrances")}>
+        <button className="btn btn-outline btn-success" onClick={() => filterByCategory("laptops")}>laptops</button>
+        <button className="btn btn-outline btn-success" onClick={() => filterByCategory("fragrances")}>
           fragrances
         </button>
-        <button onClick={() => filterByCategory("skincare")}>skincare</button>
-        <button onClick={() => filterByCategory("groceries")}>groceries</button>
+        <button
+          className="btn btn-outline btn-success"
+          onClick={() => filterByCategory("skincare")}
+        >
+          skincare
+        </button>
+        <button className="btn btn-outline btn-success" onClick={() => filterByCategory("groceries")}>groceries</button>
         {/* <button onClick={()=>filterByCategory('home-decoration')}>home-decoration</button> */}
-        <button onClick={() => filterByPrice(1000)}>{">1000"}$</button>
-        <button onClick={filterMultiplePriceCondition}>{">50 && <500"}$</button>
+        <button className="btn btn-outline btn-success" onClick={() => filterByPrice(1000)}>{">1000"}$</button>
+        <button className="btn btn-outline btn-success" onClick={filterMultiplePriceCondition}>{">50 && <500"}$</button>
       </div>
     </div>
   );

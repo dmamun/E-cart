@@ -25,7 +25,7 @@ const Cart = ({ cart, setCart }) => {
         <div className="grid grid-cols-3 gap-3">
           {cart.map((item) => (
             <div key={item.id}>
-              <div className="card w-auto h-auto bg-base-100 shadow-xl">
+              <div className="card w-auto h-4/5 bg-base-100 shadow-xl">
                 <figure>
                   <img src={item.chobi} alt="Shoes" />
                 </figure>
@@ -44,8 +44,8 @@ const Cart = ({ cart, setCart }) => {
         </div>
       )}
       <div>
-        <p>Your Total Price is :{totalPrice}Taka</p>
-        <p>Discount price of 50%:{totalDiscountPrice}Taka</p>
+        <p className="text-2xl text-red-500">Your Total Price is :{totalPrice}Taka</p>
+        <p className="text-2xl text-red-500">Discount price of 50%:{totalDiscountPrice}Taka</p>
         {cart.length !== 0 && (
           <div className="flex justify-center gap-3 mt-4 mb-4">
             <p className="btn btn-md">checkOut</p>

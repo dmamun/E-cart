@@ -22,7 +22,7 @@ const Products = ({data,cart,setCart}) => {
             </figure>
             <div className="card-body">
               <h2 className="card-title">{item.title}</h2>
-              <p>{item.description}</p>
+              <p className=" text-sm font-semibold text-pretty text-slate-700">{item.description}</p>
               <div className="card-actions grid grid-cols-2">
                 <Link to={`/products/${item.id}`}>
                   <button className="btn btn-outline btn-info">
